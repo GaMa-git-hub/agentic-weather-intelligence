@@ -1,79 +1,190 @@
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![LangGraph](https://img.shields.io/badge/LangGraph-Agent%20Orchestration-purple)
+![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-black)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 # 🌦️ Agentic Weather Intelligence System
 
-An **agent-based AI system** that collects real-time weather data, analyzes patterns, and generates intelligent insights and alerts using autonomous decision-making.
+An **Agentic AI system** that retrieves real-time weather data, reasons over user queries, and produces intelligent responses using a **LangGraph-orchestrated autonomous agent** powered by a **local LLM (Ollama + Gemma 2B)**.
 
-This project is designed to demonstrate **agentic AI concepts**, clean system design, and real-world problem solving — making it suitable for internships, placements, and AI-focused roles.
-
----
-
-## 🚀 Project Vision
-
-To build a **modular, scalable, agentic weather intelligence system** where autonomous agents:
-- Observe weather data
-- Reason over conditions
-- Take decisions (alerts, recommendations)
-- Collaborate with other agents
-
-The system is designed to evolve from a **single intelligent agent** into a **multi-agent architecture**.
+This project demonstrates modern **agent architecture design**, combining deterministic software engineering with LLM reasoning — a core pattern used in production AI systems.
 
 ---
 
-## 🧠 What Does “Agentic” Mean Here?
+## 🚀 Project Overview
 
-Unlike a normal script, this system:
-- Maintains **state**
-- Uses **tools** (APIs, analyzers)
-- Makes **decisions**
-- Can be extended to **multiple cooperating agents**
+Traditional chatbots rely entirely on LLM reasoning, which can lead to hallucinations and unreliable outputs.
 
-Example agents (planned):
-- Weather Data Agent
-- Weather Analysis Agent
-- Alert & Recommendation Agent
+This system implements a **Hybrid Agent Architecture** where:
+
+- Python handles structured decision-making
+- External tools provide real-world data
+- A local LLM performs reasoning and natural language generation
+- LangGraph orchestrates the workflow as a state machine
+
+The result is a **reliable, context-aware AI agent** capable of autonomous tool usage.
 
 ---
 
-## ✨ Key Features (Planned)
+## 🧠 Agent Architecture
 
-- 🌍 Real-time weather data ingestion
-- 🧠 Intelligent weather analysis
-- ⚠️ Automated alerts for extreme conditions
-- 🔄 Agent state management
-- 🧩 Modular and extensible architecture
-- 📈 Easy future expansion (climate trends, forecasts, dashboards)
+The agent operates as a LangGraph state pipeline:
+User Input
+↓
+Intent Detection Node
+↓
+City Extraction Node
+↓
+Weather Tool Node
+↓
+LLM Response Node
+↓
+Final Answer
+
+
+### Hybrid Control Principle
+
+| Component | Responsibility |
+|-----------|---------------|
+| Python Logic | Deterministic decisions |
+| Weather Tool | Real-world data retrieval |
+| LLM (Gemma 2B) | Reasoning & response generation |
+| LangGraph | Workflow orchestration |
+
+This design prevents hallucinations and ensures grounded responses.
+
+---
+
+## ✨ Current Features
+
+- 🌍 Real-time weather retrieval (OpenWeather API)
+- 🤖 Local LLM reasoning using Ollama (Gemma 2B)
+- 🧩 LangGraph-based agent orchestration
+- 🔄 Context-aware follow-up queries
+- 🧠 Stateful conversation flow
+- ⚙️ Deterministic tool calling
+- 🔐 Secure API key handling using `.env`
+- 🧱 Modular node-based architecture
+
+---
+
+## 🧩 Example Interaction
+Ask: what is weather in chennai?
+→ Real-time weather response
+
+Ask: in kochi?
+→ Context-aware follow-up
+
+Ask: should I carry umbrella?
+→ Recommendation based on latest weather data
+
+
 
 ---
 
 ## 🛠️ Tech Stack
 
-**Core**
+### Core
 - Python 3.x
 
-**APIs**
-- Public Weather API (OpenWeather / equivalent)
+### AI & Agents
+- Ollama (Local LLM runtime)
+- Gemma:2B Model
+- LangGraph (Agent orchestration)
 
-**AI & Agents**
-- LangChain (agent fundamentals)
-- LangGraph (multi-agent orchestration)
+### External Tools
+- OpenWeather API
 
-**Other**
+### Development
 - Git & GitHub
-- Virtual environments
-- Clean project structure
+- Virtual Environments
+- Modular Project Structure
 
 ---
 
-## 🗂️ Project Structure (Evolving)
-
-```text
+## 📂 Project Structure
 agentic-weather-intelligence/
 │
-├── README.md
-├── src/
-│   ├── agents/
-│   ├── tools/
-│   ├── data/
-│   └── main.py
+├── agents/ # Earlier manual agent implementation
+├── graph/ # LangGraph workflow
+│ └── weather_graph.py
 │
+├── llm/ # Ollama client wrapper
+├── tools/ # Weather API integration
+├── config/ # Environment settings
+│
+├── main.py # Application entry point
 ├── requirements.txt
 └── .gitignore
+
+
+---
+
+## ⚙️ How It Works
+
+1. User submits a query.
+2. Intent node determines whether weather data is required.
+3. City extraction node identifies the location.
+4. Weather tool fetches live API data.
+5. LLM generates a grounded response using tool output.
+6. Graph state persists for follow-up queries.
+
+---
+
+## ▶️ Running the Project Locally
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/<your-username>/agentic-weather-intelligence.git
+cd agentic-weather-intelligence
+
+2️⃣ Create Virtual Environment
+3️⃣ Install Dependencies
+4️⃣ Add Environment Variables
+5️⃣ Start Ollama
+6️⃣ Run the Agent
+
+🎯 Engineering Concepts Demonstrated
+
+Agentic AI system design
+
+LangGraph orchestration
+
+Tool-calling architecture
+
+Hybrid deterministic + LLM reasoning
+
+Stateful conversational agents
+
+Local LLM deployment
+
+Modular software design
+
+🔮 Future Enhancements
+
+Multi-agent collaboration
+
+Forecast analysis agent
+
+Historical weather RAG system
+
+Alert & notification engine
+
+Web dashboard interface
+
+👨‍💻 Author
+Built as part of hands-on exploration into Agentic AI systems and autonomous workflows.
+
+
+---
+
+## ✅ After Adding It
+
+Run:
+
+```bash
+git add README.md
+git commit -m "Add professional project README"
+git push
