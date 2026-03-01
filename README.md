@@ -2,7 +2,7 @@
 ![LangGraph](https://img.shields.io/badge/LangGraph-Agent%20Orchestration-purple)
 ![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-black)
 ![Status](https://img.shields.io/badge/Status-Active-success)
-![License](https://img.shields.io/badge/License-MIT-green)
+
 
 # 🌦️ Agentic Weather Intelligence System
 
