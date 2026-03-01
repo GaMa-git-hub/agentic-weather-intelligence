@@ -102,7 +102,7 @@ Ask: should I carry umbrella?
 - Modular Project Structure
 
 ---
-
+```
 ## 📂 Project Structure
 agentic-weather-intelligence/
 │
