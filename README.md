@@ -103,7 +103,7 @@ Ask: should I carry umbrella?
 
 ---
 ```
-## 📂 Project Structure
+ 📂 Project Structure
 agentic-weather-intelligence/
 │
 ├── agents/ # Earlier manual agent implementation
@@ -119,9 +119,9 @@ agentic-weather-intelligence/
 └── .gitignore
 
 
----
 
-## ⚙️ How It Works
+
+ ⚙️ How It Works
 
 1. User submits a query.
 2. Intent node determines whether weather data is required.
@@ -130,13 +130,13 @@ agentic-weather-intelligence/
 5. LLM generates a grounded response using tool output.
 6. Graph state persists for follow-up queries.
 
----
 
-## ▶️ Running the Project Locally
 
-### 1️⃣ Clone Repository
+▶️ Running the Project Locally
 
-```bash
+ 1️⃣ Clone Repository
+
+bash
 git clone https://github.com/<your-username>/agentic-weather-intelligence.git
 cd agentic-weather-intelligence
 
@@ -178,13 +178,12 @@ Web dashboard interface
 Built as part of hands-on exploration into Agentic AI systems and autonomous workflows.
 
 
----
 
-## ✅ After Adding It
+✅ After Adding It
 
 Run:
 
-```bash
+bash
 git add README.md
 git commit -m "Add professional project README"
 git push
